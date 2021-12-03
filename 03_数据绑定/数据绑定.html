@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模板语法</title>
+    <script type="text/javascript" src="../js/vue.js"></script>
+</head>
+<body>
+    <!-- 
+        单向数据绑定
+            语法：v-bind:href ="xxx" 或简写为 :href ="xxx"
+            特点：数据只能从 data 流向页面
+        双向数据绑定 指令 v-model
+            语法：v-mode:value="xxx" 或简写为 v-model="xxx"
+            特点：数据不仅能从 data 流向页面，还能从页面流向 data
+            一般应用于表单类元素（input，select）
+        -->
+    <!-- 准备好一个容器 -->
+    <div id="root">
+        单向数据绑定：<input type="text" v-bind:value="name"><br>
+        双向数据绑定：<input type="text" v-model:value="name"><br>
+
+
+        单向数据绑定：<input type="text" :value="name"><br>
+        双向数据绑定：<input type="text" v-model="name"><br>
+
+    </div>
+
+    <script type="text/javascript"> 
+        Vue.config.productionTip = false;//以阻止 vue 在启动时生成生产提示。
+        //创建Vue实例
+        new Vue({
+            el:'#root', //el用于指定当前Vue实例为哪个容器服务，值一般为CSS选择器字符串
+            data:{//data中用于存储数据，数据供el所制定的容器去使用，值我们暂时写成一个对象
+                name:'jack',
+                school:{
+                    name:'百度',
+                    url:'http://www.baidu.com'
+                }
+                
+            }
+        })
+        
+    </script>
+</body>
+</html>

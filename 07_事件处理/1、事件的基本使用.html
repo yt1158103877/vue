@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <div id='app'>
+        <h2>{{name}}</h2>
+        <!-- <button v-on:click="showInfo">点我提示信息 </button> -->
+        <button @click="showInfo1">点我提示信息1</button>
+        <button @click="showInfo2($event,66)">点我提示信息2</button>
+    </div>
+    <script>
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                name:'yt'
+            },  
+            methods: {
+                showInfo1(event){
+                    //console.log(this)//此处的this是vm
+                    console.log(event)
+                    alert('同学你好1')
+                },
+                showInfo2(event,number){
+                    //console.log(this)//此处的this是vm
+                    console.log(event)
+                    alert('同学你好2')
+                    alert(number)
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

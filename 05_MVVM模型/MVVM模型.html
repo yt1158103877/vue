@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Document</title>
+    <script src="../js/vue.js"></script>
+</head>
+
+<body>
+    <!-- 
+        MVVM
+            MVVM 本质上是 MVC （Model-View- Controller）的改进版。即模型-视图-视图模型。
+
+            模型model指的是后端传递的数据，视图view指的是所看到的页面。
+
+            视图模型viewModel是 mvvm 模式的核心，它是连接 view 和 model 的桥梁。它有两个方向：
+
+            将模型转化成视图，即将后端传递的数据转化成所看到的页面。实现的方式是：数据绑定
+            将视图转化成模型，即将所看到的页面转化成后端的数据。实现的方式是：DOM 事件监听
+
+            这两个方向都实现的，我们称之为数据的双向绑定
+
+    -->
+    <div id='app'>
+        <h1>学校名：{{name}}</h1>
+        <h1>学校地址：{{address}}</h1>
+        <h1>测试1：{{$options}}</h1>
+        <h1>测试2：{{_c}}</h1>
+    </div>
+    <script>
+        const vm = new Vue({
+            el: '#app',
+            data: {
+                name:'南昌大学',
+                address:'南昌市'
+            },  
+            methods: {
+                
+            }
+        })
+        console.log(vm)
+    </script>
+</body>
+
+</html>
